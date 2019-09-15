@@ -26,8 +26,8 @@ def pay_once():
             'currency': 'aud',
             'quantity': 1,
         }],
-        success_url='http://doctorsaustralia.fun',
-        cancel_url='http://doctorsaustralia.fun'
+        success_url='https://doctorsaustralia.fun',
+        cancel_url='https://doctorsaustralia.fun'
     )
     return jsonify(data=session.stripe_id)
 
