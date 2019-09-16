@@ -1,4 +1,8 @@
 import os
 
-STRIPE_API_KEY = os.environ.get("STRIPE_API_KEY")
+from dotenv import load_dotenv
+
+load_dotenv()
+
+STRIPE_API_KEY = os.getenv("STRIPE_API_KEY")
 
