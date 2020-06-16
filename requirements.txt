@@ -1,5 +1,9 @@
-flask==1.1
-stripe==2.36.2
+auth0-python==3.10.0
+authlib
+flask==1.1.2
 flask-cors==3.0.8
 gunicorn
+python-jose==3.1.0
 python-dotenv
+request
+stripe==2.36.2
