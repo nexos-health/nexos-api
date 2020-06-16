@@ -7,7 +7,7 @@ from medapi.settings import PEEPS_HOST
 def proxy_request(*args, **kwargs):
     resp = requests.request(
         method=request.method,
-        url=request.url.replace(request.host_url, PEEPS_HOST),
+        url=request.url.replace(request.host_url, PEEPS_HOST.strip("/")),
         headers={key: value for (key, value) in request.headers if key != 'Host'},
         data=request.get_data(),
         cookies=request.cookies,
