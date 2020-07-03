@@ -3,10 +3,9 @@ from six.moves.urllib.request import urlopen
 from functools import wraps
 
 from flask import Flask, request, jsonify, _request_ctx_stack
-from flask_cors import cross_origin
 from jose import jwt
 
-from medapi.settings import AUTH0_AUDIENCE, AUTH0_DOMAIN, AUTH0_ALGORITHM
+from medapi.settings import AUTH0_AUDIENCE, AUTH0_DOMAIN, AUTH0_ALGORITHM, AUTH0_USER_KEY_CLAIM
 from medapi.exceptions import AuthError
 
 
@@ -39,10 +38,10 @@ def get_token_auth_header():
     return token
 
 
-def requires_auth(f):
+def requires_auth(func):
     """Determines if the access token is valid
     """
-    @wraps(f)
+    @wraps(func)
     def decorated(*args, **kwargs):
         token = get_token_auth_header()
         jsonurl = urlopen("https://" + AUTH0_DOMAIN + "/.well-known/jwks.json")
@@ -82,7 +81,8 @@ def requires_auth(f):
                                     " token."}, 400)
 
             _request_ctx_stack.top.current_user = payload
-            return f(*args, **kwargs)
+            kwargs["user_key"] = payload[AUTH0_USER_KEY_CLAIM]
+            return func(*args, **kwargs)
         raise AuthError({"code": "invalid_header",
                         "description": "Unable to find appropriate key"}, 400)
     return decorated
