@@ -18,10 +18,13 @@ def get_groups(**kwargs):
     return proxy(params=params)
 
 
-@app.route(prefix + '/<id>/', methods=["POST"])
+@app.route(prefix + '/', methods=["POST"])
 @requires_auth
-def create_group(group_id):
-    return proxy(params={"id": group_id})
+def create_group(**kwargs):
+    # user_key_dict = {"user_key": kwargs.get("user_key")}
+    user_key_dict = {"user_key": "UK4BSGB9"}
+    data = {**request.json, **user_key_dict}
+    return proxy(data=data)
 
 
 @app.route(prefix + '/<id>/', methods=["GET"])
@@ -30,13 +33,19 @@ def get_group(id, **kwargs):
     return proxy()
 
 
-@app.route(prefix + '/<id>/add_professional', methods=["PUT"])
+@app.route(prefix + '/add_professional/', methods=["POST"])
 @requires_auth
-def add_professional(id):
-    return proxy()
+def add_professional(**kwargs):
+    # user_key_dict = {"user_key": kwargs.get("user_key")}
+    user_key_dict = {"user_key": "UK4BSGB9"}
+    data = {**request.data, **user_key_dict}
+    return proxy(data=data)
 
 
-@app.route(prefix + '/<id>/remove_professional', methods=["PUT"])
+@app.route(prefix + '/remove_professional/', methods=["DELETE"])
 @requires_auth
-def remove_professional(id):
-    return proxy()
+def remove_professional(**kwargs):
+    # user_key_dict = {"user_key": kwargs.get("user_key")}
+    user_key_dict = {"user_key": "UK4BSGB9"}
+    data = {**request.data, **user_key_dict}
+    return proxy(data=data)

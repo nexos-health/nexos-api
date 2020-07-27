@@ -10,7 +10,7 @@ def proxy(
         params=None,
         data=None,
         path=None,
-        method="GET",
+        method=None,
         cookies=None,
 ):
     if not headers:
@@ -20,18 +20,18 @@ def proxy(
     if not method:
         method = request.method
     if not params:
-        params = request.args
+        params = request.args or {}
     if not data:
-        data = request.get_data()
+        data = request.get_data() or {}
     if not cookies:
-        cookies = request.cookies
+        cookies = request.cookies or {}
 
     resp = requests.request(
         method=method,
         url=host_url.strip("/") + path,
         headers=headers,
         params=params,
-        data=data,
+        json=data,
         cookies=cookies,
         allow_redirects=False
     )
