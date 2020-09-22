@@ -2,7 +2,7 @@ from flask import Flask
 from flask_cors import CORS
 
 app = Flask(__name__)
-cors = CORS(app, resources=r'/api/*', origins=["https://nexoshealth.com.au"])
+cors = CORS(app, resources=r'/api/*', origins=["nexoshealth.com.au"])
 
 
 @app.route('/', methods=["GET"])
