@@ -4,11 +4,19 @@ from flask_cors import CORS
 app = Flask(__name__)
 # cors = CORS(app, resources={r"/api/*": {"origins": "*"}}, expose_headers="Content-Type")
 cors = CORS(app)
+app.config['CORS_HEADERS'] = 'Content-Type'
+
+prefix = "/api/professionals"
 
 
 @app.route('/', methods=["GET"])
 def hello():
     return "Hello, what are you doing here?"
+
+
+@app.route(prefix + '/list_profession_types/', methods=["GET"])
+def list_profession_types():
+    return proxy()
 
 
 if __name__ == "__main__":
@@ -17,5 +25,5 @@ if __name__ == "__main__":
 from medapi.routes.payments.payments import *
 from medapi.routes.authentication.account import *
 from medapi.routes.professionals.groups import *
-from medapi.routes.professionals.search import *
+# from medapi.routes.professionals.search import *
 
