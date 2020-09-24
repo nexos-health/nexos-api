@@ -2,7 +2,6 @@
 Api routes for searching professionals
 """
 from flask import request
-from flask_cors import cross_origin
 
 from medapi.routes.authentication.utils import requires_auth
 from medapi.utils import proxy
@@ -17,6 +16,5 @@ def list_professionals():
 
 
 @app.route(prefix + '/list_profession_types/', methods=["GET"])
-@cross_origin()
 def list_profession_types():
-    return proxy()
+    return "Hi There"
