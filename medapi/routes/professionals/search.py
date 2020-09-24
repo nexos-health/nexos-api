@@ -17,4 +17,9 @@ def list_professionals():
 
 @app.route(prefix + '/list_profession_types/', methods=["GET"])
 def list_profession_types():
+    return proxy()
+
+
+@app.route(prefix + '/hi_there/', methods=["GET"])
+def hi_there():
     return "Hi There"
