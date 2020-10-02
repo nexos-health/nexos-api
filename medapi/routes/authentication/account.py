@@ -52,7 +52,7 @@ def signup():
     except Exception as ex:
         return jsonify(data=f"Error: {ex}"), 500
     data = {
-        "user_id": resp.json()["user_id"]
+        "user_key": resp.json()["user_key"]
     }
 
     return jsonify(data)
