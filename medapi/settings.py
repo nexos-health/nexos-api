@@ -17,7 +17,7 @@ AUTH0_REALM = os.environ.get("AUTH0_REALM")
 AUTH0_CLIENT_SECRET = os.environ.get("AUTH0_CLIENT_SECRET")
 AUTH0_CLIENT_ID = os.environ.get("AUTH0_CLIENT_ID")
 AUTH0_ALGORITHM = os.environ.get("AUTH0_ALGORITHM", "RS256")
-AUTH0_USER_KEY_CLAIM = os.environ.get("AUTH0_USER_KEY_CLAIM", "https://medrecruitment.com/user_key")
+AUTH0_USER_KEY_CLAIM = os.environ.get("AUTH0_USER_KEY_CLAIM", "https://nexoshealth.com.au/user_key")
 
 # Professionals host
 PEEPS_HOST = os.environ.get("PEEPS_HOST", "https://doctorsaustralia.fun:8000")
