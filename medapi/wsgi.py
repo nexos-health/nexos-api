@@ -15,7 +15,8 @@ if __name__ == "__main__":
     app.run()
 
 from medapi.routes.payments.payments import *
-from medapi.routes.authentication.account import *
+from medapi.routes.account.account import *
+from medapi.routes.account.user_data import *
 from medapi.routes.professionals.groups import *
 from medapi.routes.professionals.search import *
 

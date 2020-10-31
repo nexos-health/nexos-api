@@ -3,7 +3,7 @@ Api routes for searching professionals
 """
 from flask import request
 
-from medapi.routes.authentication.utils import requires_auth
+from medapi.routes.account.utils import requires_auth
 from medapi.utils import proxy
 from medapi.wsgi import app
 
@@ -13,6 +13,13 @@ prefix = "/api/groups"
 @app.route(prefix + '/', methods=["GET"])
 @requires_auth
 def get_groups(**kwargs):
+    params = {"user_key": kwargs.get("user_key")}
+    return proxy(params=params)
+
+
+@app.route(prefix + '/get_favourites/', methods=["GET"])
+@requires_auth
+def get_favourites(**kwargs):
     params = {"user_key": kwargs.get("user_key")}
     return proxy(params=params)
 

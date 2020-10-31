@@ -81,10 +81,66 @@ def requires_auth(func):
                                     " token."}, 400)
 
             _request_ctx_stack.top.current_user = payload
-            kwargs["user_key"] = payload[AUTH0_USER_KEY_CLAIM]
+            # kwargs["user_key"] = payload[AUTH0_USER_KEY_CLAIM]
+            kwargs["user_key"] = "UK4BSGB9"
             return func(*args, **kwargs)
         raise AuthError({"code": "invalid_header",
                         "description": "Unable to find appropriate key"}, 400)
+    return decorated
+
+
+# optional_auth is copied here as I couldn't get the requires_auth decorator to work by taking in
+# an "optional=True/False" argument. It was giving the following error:
+# "AssertionError: View function mapping is overwriting an existing endpoint function: decorator"
+def optional_auth(func):
+    """Determines if the access token is valid"""
+    @wraps(func)
+    def decorated(*args, **kwargs):
+        try:
+            token = get_token_auth_header()
+        except AuthError:
+            return func(*args, **kwargs)
+
+        jsonurl = urlopen("https://" + AUTH0_DOMAIN + "/.well-known/jwks.json")
+        jwks = json.loads(jsonurl.read())
+        unverified_header = jwt.get_unverified_header(token)
+        rsa_key = {}
+        for key in jwks["keys"]:
+            if key["kid"] == unverified_header["kid"]:
+                rsa_key = {
+                    "kty": key["kty"],
+                    "kid": key["kid"],
+                    "use": key["use"],
+                    "n": key["n"],
+                    "e": key["e"]
+                }
+        if rsa_key:
+            try:
+                payload = jwt.decode(
+                    token,
+                    rsa_key,
+                    algorithms=[AUTH0_ALGORITHM],
+                    audience=AUTH0_AUDIENCE,
+                    issuer="https://" + AUTH0_DOMAIN + "/"
+                )
+            except jwt.ExpiredSignatureError:
+                raise AuthError({"code": "token_expired",
+                                 "description": "token is expired"}, 401)
+            except jwt.JWTClaimsError:
+                raise AuthError({"code": "invalid_claims",
+                                 "description":
+                                     "incorrect claims,"
+                                     "please check the audience and issuer"}, 401)
+            except Exception:
+                raise AuthError({"code": "invalid_header",
+                                 "description":
+                                     "Unable to parse authentication"
+                                     " token."}, 400)
+
+            _request_ctx_stack.top.current_user = payload
+            # kwargs["user_key"] = payload[AUTH0_USER_KEY_CLAIM]
+            kwargs["user_key"] = "UK4BSGB9"
+        return func(*args, **kwargs)
     return decorated
 
 
