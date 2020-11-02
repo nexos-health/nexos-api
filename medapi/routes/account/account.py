@@ -47,12 +47,15 @@ def signup():
     """
     json_body = request.json
     create_user_url = settings.PEEPS_HOST + "/api/users/"
+    create_favourites_group_url = settings.PEEPS_HOST + "/api/groups/create_favourites_group/"
     try:
         resp = requests.post(create_user_url, data={"email": json_body["email"], "auth_id": json_body["auth_id"]})
+        user_key = resp.json()["user_key"]
+        favourites_resp = requests.post(create_favourites_group_url, data={"user_key": user_key})
+        if favourites_resp.status_code != 201:
+            raise Exception
     except Exception as ex:
         return jsonify(data=f"Error: {ex}"), 500
-    data = {
-        "user_key": resp.json()["user_key"]
-    }
 
+    data = {"user_key": user_key}
     return jsonify(data)
