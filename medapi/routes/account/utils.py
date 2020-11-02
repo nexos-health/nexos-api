@@ -39,8 +39,7 @@ def get_token_auth_header():
 
 
 def requires_auth(func):
-    """Determines if the access token is valid
-    """
+    """Determines if the access token is valid"""
     @wraps(func)
     def decorated(*args, **kwargs):
         token = get_token_auth_header()
@@ -81,8 +80,8 @@ def requires_auth(func):
                                     " token."}, 400)
 
             _request_ctx_stack.top.current_user = payload
-            # kwargs["user_key"] = payload[AUTH0_USER_KEY_CLAIM]
-            kwargs["user_key"] = "UK4BSGB9"
+            kwargs["user_key"] = payload[AUTH0_USER_KEY_CLAIM]
+            # kwargs["user_key"] = "UK4BSGB9"
             return func(*args, **kwargs)
         raise AuthError({"code": "invalid_header",
                         "description": "Unable to find appropriate key"}, 400)
@@ -138,8 +137,8 @@ def optional_auth(func):
                                      " token."}, 400)
 
             _request_ctx_stack.top.current_user = payload
-            # kwargs["user_key"] = payload[AUTH0_USER_KEY_CLAIM]
-            kwargs["user_key"] = "UK4BSGB9"
+            kwargs["user_key"] = payload[AUTH0_USER_KEY_CLAIM]
+            # kwargs["user_key"] = "UK4BSGB9"
         return func(*args, **kwargs)
     return decorated
 
