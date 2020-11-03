@@ -5,13 +5,13 @@ from medapi.settings import PEEPS_HOST
 
 
 def proxy(
-        host_url=PEEPS_HOST,
-        headers=None,
-        params=None,
-        data=None,
-        path=None,
-        method=None,
-        cookies=None,
+    host_url=PEEPS_HOST,
+    headers=None,
+    params=None,
+    data=None,
+    path=None,
+    method=None,
+    cookies=None,
 ):
     if not headers:
         headers = {key: value for (key, value) in request.headers if key != 'Host'}

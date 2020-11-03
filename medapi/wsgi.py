@@ -5,14 +5,13 @@ import logging
 app = Flask(__name__)
 cors = CORS(app, resources={r"/api/*": {"origins": "*"}}, expose_headers="Content-Type")
 
-if __name__ != '__main__':
-    gunicorn_logger_handler = logging.getLogger('gunicorn.error')
-    logging.basicConfig(
-        handlers=[gunicorn_logger_handler],
-        format="%(asctime)s %(name)s:%(levelname)s:%(message)s",
-        datefmt="%F %A %T",
-        level=logging.DEBUG
-    )
+logging_handler = logging.FileHandler(filename="/var/log/medplatform-api.log", encoding='utf-8', mode='a+')
+logging.basicConfig(
+    handlers=[logging_handler],
+    format="%(asctime)s %(name)s:%(levelname)s:%(message)s",
+    datefmt="%F %A %T",
+    level=logging.DEBUG
+)
 
 # cors = CORS(app)
 logger = logging.getLogger(__name__)
