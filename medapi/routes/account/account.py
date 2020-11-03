@@ -8,16 +8,16 @@ from flask import session
 from flask import url_for
 from flask_cors import cross_origin
 from functools import wraps
+import logging
 import json
 from os import environ as env
 from six.moves.urllib.parse import urlencode
 from werkzeug.exceptions import HTTPException
 
 from medapi import settings
-
-
 from medapi.wsgi import app
 
+logger = logging.getLogger(__name__)
 oauth = OAuth(app)
 
 auth0 = oauth.register(
@@ -51,7 +51,9 @@ def signup():
     try:
         resp = requests.post(create_user_url, data={"email": json_body["email"], "auth_id": json_body["auth_id"]})
         user_key = resp.json()["user_key"]
+        logger.info(f"User Key: {user_key}")
         favourites_resp = requests.post(create_favourites_group_url, data={"user_key": user_key})
+        logger.info(f"Favourites Response: {favourites_resp.status_code} - {favourites_resp.text}")
         if favourites_resp.status_code != 201:
             raise Exception
     except Exception as ex:
