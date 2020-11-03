@@ -5,7 +5,9 @@ import logging
 app = Flask(__name__)
 cors = CORS(app, resources={r"/api/*": {"origins": "*"}}, expose_headers="Content-Type")
 
-logging_handler = logging.FileHandler(filename="/var/log/medplatform-api.log", encoding='utf-8', mode='a+')
+logging_handler = logging.FileHandler(
+    filename="./medplatform-api.log", encoding='utf-8', mode='a+'
+)
 logging.basicConfig(
     handlers=[logging_handler],
     format="%(asctime)s %(name)s:%(levelname)s:%(message)s",
