@@ -6,8 +6,8 @@ from flask import Flask, request, jsonify, _request_ctx_stack
 from flask_cors import cross_origin
 from jose import jwt
 
-from medapi.settings import AUTH0_AUDIENCE, AUTH0_DOMAIN, AUTH0_ALGORITHM
-from medapi.wsgi import app
+from settings import AUTH0_AUDIENCE, AUTH0_DOMAIN, AUTH0_ALGORITHM
+from wsgi import app
 
 
 # Error handler

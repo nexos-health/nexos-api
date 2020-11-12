@@ -26,11 +26,11 @@ def hello():
 
 
 if __name__ == "__main__":
-    app.run()
+    app.run(host="0.0.0.0")
 
-from medapi.routes.payments.payments import *
-from medapi.routes.account.account import *
-from medapi.routes.account.user_data import *
-from medapi.routes.professionals.groups import *
-from medapi.routes.professionals.search import *
+from routes.payments.payments import *
+from routes.account.account import *
+from routes.account.user_data import *
+from routes.professionals.groups import *
+from routes.professionals.search import *
 

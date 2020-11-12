@@ -3,9 +3,9 @@ Api routes for searching professionals
 """
 from flask import request
 
-from medapi.routes.account.utils import requires_auth
-from medapi.utils import proxy
-from medapi.wsgi import app
+from routes.account.utils import requires_auth
+from utils import proxy
+from wsgi import app
 
 prefix = "/api/users"
 

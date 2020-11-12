@@ -1,0 +1,20 @@
+# hidden files
+.gitignore
+.git
+*.pyc
+*.idea
+
+# Docker
+docker-compose.*
+Dockerfile*
+
+# Virtual env
+env/
+venv/
+
+# .env files
+*.env
+.env*
+
+# Other
+db.sqlite3

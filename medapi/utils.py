@@ -1,7 +1,7 @@
 from flask import request, Response, g
 import requests
 
-from medapi.settings import PEEPS_HOST
+from settings import PEEPS_HOST
 
 
 def proxy(

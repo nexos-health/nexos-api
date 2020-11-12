@@ -14,8 +14,8 @@ from os import environ as env
 from six.moves.urllib.parse import urlencode
 from werkzeug.exceptions import HTTPException
 
-from medapi import settings
-from medapi.wsgi import app
+import settings
+from wsgi import app
 
 logger = logging.getLogger(__name__)
 oauth = OAuth(app)

@@ -2,8 +2,8 @@ from flask_cors import cross_origin
 from flask import jsonify
 import stripe
 
-from medapi.wsgi import app
-from medapi.settings import STRIPE_API_KEY
+from wsgi import app
+from settings import STRIPE_API_KEY
 
 prefix = "/api/payment"
 stripe.api_key = STRIPE_API_KEY
