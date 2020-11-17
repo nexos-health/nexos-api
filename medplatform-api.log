@@ -1,0 +1,45 @@
+2020-11-16 Monday 05:30:05 routes.account.account:INFO:Hello there
+2020-11-16 Monday 05:30:05 werkzeug:INFO:172.17.0.1 - - [16/Nov/2020 05:30:05] "[37mGET / HTTP/1.1[0m" 200 -
+2020-11-16 Monday 05:30:06 werkzeug:INFO:172.17.0.1 - - [16/Nov/2020 05:30:06] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2020-11-16 Monday 05:30:24 werkzeug:INFO:172.17.0.1 - - [16/Nov/2020 05:30:24] "[37mOPTIONS /api/professionals/list_professionals/?professionTypes= HTTP/1.1[0m" 200 -
+2020-11-16 Monday 05:30:24 werkzeug:INFO:172.17.0.1 - - [16/Nov/2020 05:30:24] "[37mOPTIONS /api/professionals/list_profession_types/ HTTP/1.1[0m" 200 -
+2020-11-16 Monday 05:30:24 urllib3.connectionpool:DEBUG:Starting new HTTPS connection (1): nexoshealth.com.au:8000
+2020-11-16 Monday 05:30:24 urllib3.connectionpool:DEBUG:Starting new HTTPS connection (1): nexoshealth.com.au:8000
+2020-11-16 Monday 05:30:25 urllib3.connectionpool:DEBUG:https://nexoshealth.com.au:8000 "GET /api/professionals/list_professionals/?professionTypes= HTTP/1.1" 200 2
+2020-11-16 Monday 05:30:25 werkzeug:INFO:172.17.0.1 - - [16/Nov/2020 05:30:25] "[37mGET /api/professionals/list_professionals/?professionTypes= HTTP/1.1[0m" 200 -
+2020-11-16 Monday 05:30:25 urllib3.connectionpool:DEBUG:https://nexoshealth.com.au:8000 "GET /api/professionals/list_profession_types/ HTTP/1.1" 200 4292
+2020-11-16 Monday 05:30:25 werkzeug:INFO:172.17.0.1 - - [16/Nov/2020 05:30:25] "[37mGET /api/professionals/list_profession_types/ HTTP/1.1[0m" 200 -
+2020-11-16 Monday 05:30:28 werkzeug:INFO:172.17.0.1 - - [16/Nov/2020 05:30:28] "[37mOPTIONS /api/professionals/list_professionals/?professionTypes=aaee3b4e23164394becfc491cb447b73 HTTP/1.1[0m" 200 -
+2020-11-16 Monday 05:30:28 urllib3.connectionpool:DEBUG:Starting new HTTPS connection (1): nexoshealth.com.au:8000
+2020-11-16 Monday 05:30:29 urllib3.connectionpool:DEBUG:https://nexoshealth.com.au:8000 "GET /api/professionals/list_professionals/?professionTypes=aaee3b4e23164394becfc491cb447b73 HTTP/1.1" 200 13143
+2020-11-16 Monday 05:30:29 werkzeug:INFO:172.17.0.1 - - [16/Nov/2020 05:30:29] "[37mGET /api/professionals/list_professionals/?professionTypes=aaee3b4e23164394becfc491cb447b73 HTTP/1.1[0m" 200 -
+2020-11-16 Monday 05:32:29 werkzeug:INFO:172.17.0.1 - - [16/Nov/2020 05:32:29] "[37mOPTIONS /api/professionals/list_professionals/?professionTypes= HTTP/1.1[0m" 200 -
+2020-11-16 Monday 05:32:29 werkzeug:INFO:172.17.0.1 - - [16/Nov/2020 05:32:29] "[37mOPTIONS /api/professionals/list_profession_types/ HTTP/1.1[0m" 200 -
+2020-11-16 Monday 05:32:29 urllib3.connectionpool:DEBUG:Starting new HTTPS connection (1): nexoshealth.com.au:8000
+2020-11-16 Monday 05:32:29 urllib3.connectionpool:DEBUG:Starting new HTTPS connection (1): nexoshealth.com.au:8000
+2020-11-16 Monday 05:32:30 urllib3.connectionpool:DEBUG:https://nexoshealth.com.au:8000 "GET /api/professionals/list_professionals/?professionTypes= HTTP/1.1" 200 2
+2020-11-16 Monday 05:32:30 werkzeug:INFO:172.17.0.1 - - [16/Nov/2020 05:32:30] "[37mGET /api/professionals/list_professionals/?professionTypes= HTTP/1.1[0m" 200 -
+2020-11-16 Monday 05:32:30 urllib3.connectionpool:DEBUG:https://nexoshealth.com.au:8000 "GET /api/professionals/list_profession_types/ HTTP/1.1" 200 4292
+2020-11-16 Monday 05:32:30 werkzeug:INFO:172.17.0.1 - - [16/Nov/2020 05:32:30] "[37mGET /api/professionals/list_profession_types/ HTTP/1.1[0m" 200 -
+2020-11-16 Monday 05:32:33 werkzeug:INFO:172.17.0.1 - - [16/Nov/2020 05:32:33] "[37mOPTIONS /api/professionals/list_professionals/?professionTypes=49e7c12254eb49b090afbe901ed0ebec HTTP/1.1[0m" 200 -
+2020-11-16 Monday 05:32:33 urllib3.connectionpool:DEBUG:Starting new HTTPS connection (1): nexoshealth.com.au:8000
+2020-11-16 Monday 05:32:34 urllib3.connectionpool:DEBUG:https://nexoshealth.com.au:8000 "GET /api/professionals/list_professionals/?professionTypes=49e7c12254eb49b090afbe901ed0ebec HTTP/1.1" 200 25223
+2020-11-16 Monday 05:32:34 werkzeug:INFO:172.17.0.1 - - [16/Nov/2020 05:32:34] "[37mGET /api/professionals/list_professionals/?professionTypes=49e7c12254eb49b090afbe901ed0ebec HTTP/1.1[0m" 200 -
+2020-11-16 Monday 07:02:25 werkzeug:INFO:172.17.0.1 - - [16/Nov/2020 07:02:25] "[37mOPTIONS /api/professionals/list_professionals/?professionTypes= HTTP/1.1[0m" 200 -
+2020-11-16 Monday 07:02:25 werkzeug:INFO:172.17.0.1 - - [16/Nov/2020 07:02:25] "[37mOPTIONS /api/professionals/list_profession_types/ HTTP/1.1[0m" 200 -
+2020-11-16 Monday 07:02:25 urllib3.connectionpool:DEBUG:Starting new HTTPS connection (1): nexoshealth.com.au:8000
+2020-11-16 Monday 07:02:25 urllib3.connectionpool:DEBUG:Starting new HTTPS connection (1): nexoshealth.com.au:8000
+2020-11-16 Monday 07:02:26 urllib3.connectionpool:DEBUG:https://nexoshealth.com.au:8000 "GET /api/professionals/list_professionals/?professionTypes= HTTP/1.1" 200 2
+2020-11-16 Monday 07:02:26 werkzeug:INFO:172.17.0.1 - - [16/Nov/2020 07:02:26] "[37mGET /api/professionals/list_professionals/?professionTypes= HTTP/1.1[0m" 200 -
+2020-11-16 Monday 07:02:26 urllib3.connectionpool:DEBUG:https://nexoshealth.com.au:8000 "GET /api/professionals/list_profession_types/ HTTP/1.1" 200 4292
+2020-11-16 Monday 07:02:26 werkzeug:INFO:172.17.0.1 - - [16/Nov/2020 07:02:26] "[37mGET /api/professionals/list_profession_types/ HTTP/1.1[0m" 200 -
+2020-11-16 Monday 07:03:49 werkzeug:INFO:172.17.0.1 - - [16/Nov/2020 07:03:49] "[37mOPTIONS /api/professionals/list_professionals/?professionTypes=ab880ba6f4f34d47bde15759104b4403 HTTP/1.1[0m" 200 -
+2020-11-16 Monday 07:03:49 urllib3.connectionpool:DEBUG:Starting new HTTPS connection (1): nexoshealth.com.au:8000
+2020-11-16 Monday 07:03:49 urllib3.connectionpool:DEBUG:https://nexoshealth.com.au:8000 "GET /api/professionals/list_professionals/?professionTypes=ab880ba6f4f34d47bde15759104b4403 HTTP/1.1" 200 2824
+2020-11-16 Monday 07:03:49 werkzeug:INFO:172.17.0.1 - - [16/Nov/2020 07:03:49] "[37mGET /api/professionals/list_professionals/?professionTypes=ab880ba6f4f34d47bde15759104b4403 HTTP/1.1[0m" 200 -
+2020-11-16 Monday 07:03:57 werkzeug:INFO:172.17.0.1 - - [16/Nov/2020 07:03:57] "[37mOPTIONS /api/professionals/list_professionals/?professionTypes= HTTP/1.1[0m" 200 -
+2020-11-16 Monday 07:03:57 urllib3.connectionpool:DEBUG:Starting new HTTPS connection (1): nexoshealth.com.au:8000
+2020-11-16 Monday 07:03:58 urllib3.connectionpool:DEBUG:https://nexoshealth.com.au:8000 "GET /api/professionals/list_professionals/?professionTypes= HTTP/1.1" 200 2
+2020-11-16 Monday 07:03:58 werkzeug:INFO:172.17.0.1 - - [16/Nov/2020 07:03:58] "[37mGET /api/professionals/list_professionals/?professionTypes= HTTP/1.1[0m" 200 -
+2020-11-16 Monday 07:24:19 werkzeug:INFO:172.17.0.1 - - [16/Nov/2020 07:24:19] "[37mOPTIONS /api/professionals/list_profession_types/ HTTP/1.1[0m" 200 -
+2020-11-16 Monday 07:24:19 werkzeug:INFO:172.17.0.1 - - [16/Nov/2020 07:24:19] "[37mOPTIONS /api/professionals/list_professionals/?professionTypes= HTTP/1.1[0m" 200 -

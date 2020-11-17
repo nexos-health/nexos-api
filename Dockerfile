@@ -16,7 +16,7 @@ COPY requirements.txt /src/
 RUN pip install -r requirements.txt
 
 # Copy files to image
-COPY ./medapi /src/
+COPY src /src/
 
 # Commands to run on startup of container
 CMD exec gunicorn --bind :$PORT --workers 3 --timeout 0 wsgi:app
