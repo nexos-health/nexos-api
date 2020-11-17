@@ -1,0 +1,13 @@
+steps:
+  - name: "gcr.io/cloud-builders/docker"
+    args: ["build", "-t", "gcr.io/dev-nexos/dnexos-api", "."]
+
+  - name: "gcr.io/cloud-builders/docker"
+    args: ["push", "gcr.io/dev-nexos/dnexos-api"]
+
+#  - name: "gcr.io/google-appengine/exec-wrapper"
+#    args: ["-i", "gcr.io/dev-nexos/dnexos-api",
+#           "-e", "GOOGLE_PROJECT_NAME=dev-nexos",
+#           "-e", "GOOGLE_SECRETS_NAME=dnexos-api-secrets",
+#           "-e", "GOOGLE_SECRETS_VERSION=latest",
+#           "--", "python", "manage.py", "collectstatic", "--no-input"]
